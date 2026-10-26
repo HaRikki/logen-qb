@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel — Premium Bio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div id="auth-check" class="auth-screen">
+    <div class="auth-box">
+      <h2>Admin Access</h2>
+      <input type="password" id="auth-pw" placeholder="Password">
+      <button id="auth-btn">Enter</button>
+      <p id="auth-err" class="hidden">Incorrect password</p>
+      <a href="index.html" class="back-link">← Back to Website</a>
+    </div>
+  </div>
+
+  <div id="admin-app" class="hidden">
+    <aside id="sidebar">
+      <div class="sidebar-brand">
+        <span>✨</span> Admin Panel
+      </div>
+      <nav id="nav">
+        <a href="#" data-page="dashboard" class="nav-item active"><i class="fas fa-chart-pie"></i> Dashboard</a>
+        <a href="#" data-page="profile" class="nav-item"><i class="fas fa-user"></i> Profile</a>
+        <a href="#" data-page="links" class="nav-item"><i class="fas fa-link"></i> Links</a>
+        <a href="#" data-page="music" class="nav-item"><i class="fas fa-music"></i> Music</a>
+        <a href="#" data-page="media" class="nav-item"><i class="fas fa-photo-video"></i> Media Library</a>
+        <a href="#" data-page="background" class="nav-item"><i class="fas fa-image"></i> Background</a>
+        <a href="#" data-page="appearance" class="nav-item"><i class="fas fa-palette"></i> Appearance</a>
+        <a href="#" data-page="effects" class="nav-item"><i class="fas fa-magic"></i> Effects</a>
+        <a href="#" data-page="popup" class="nav-item"><i class="fas fa-bullhorn"></i> Popup</a>
+        <a href="#" data-page="analytics" class="nav-item"><i class="fas fa-chart-bar"></i> Analytics</a>
+        <a href="#" data-page="backup" class="nav-item"><i class="fas fa-database"></i> Backup & Restore</a>
+        <a href="#" data-page="security" class="nav-item"><i class="fas fa-shield-alt"></i> Security</a>
+        <a href="#" data-page="settings" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="index.html" target="_blank" class="preview-btn"><i class="fas fa-eye"></i> Preview Website</a>
+        <button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+    </aside>
+
+    <main id="content">
+      <header class="topbar">
+        <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
+        <h1 id="page-title">Dashboard</h1>
+        <button id="save-btn" class="save-btn"><i class="fas fa-save"></i> Save Changes</button>
+      </header>
+      <div id="pages"></div>
+      <div id="toast" class="toast hidden">Saved successfully</div>
+    </main>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

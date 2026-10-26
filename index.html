@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#06101f">
+  <meta name="description" content="Premium Bio Link Website">
+  <meta property="og:title" content="Premium Bio">
+  <meta property="og:description" content="Premium Link-in-Bio Website">
+  <meta property="og:type" content="website">
+  <title>Premium Bio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Kantumruy+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Critical fallback so page is never blank white if CSS fails to load -->
+  <style>
+    html,body{margin:0;min-height:100%;background:#06101f;color:#f5f9ff;font-family:system-ui,sans-serif}
+    .hidden{display:none!important}
+    #loading-screen{position:fixed;inset:0;z-index:400;display:grid;place-items:center;background:#06101f}
+    #maintenance-screen{position:fixed;inset:0;z-index:300;display:grid;place-items:center;text-align:center;padding:24px;background:#06101f}
+  </style>
+</head>
+<body>
+  <!-- Loading -->
+  <div id="loading-screen">
+    <div class="ld">
+      <div class="ld-badge"><span class="ld-ring"></span><img id="loader-logo" src="assets/logo/logo.jpg" alt=""></div>
+      <div class="ld-bar"><i></i></div>
+    </div>
+  </div>
+
+  <!-- Maintenance -->
+  <div id="maintenance-screen" class="hidden">
+    <div class="maintenance-content">
+      <div class="maint-icon"><i class="fas fa-tools"></i></div>
+      <h1>កំពុងថែទាំ</h1>
+      <p>វែបសាយកំពុងថែទាំ។ សូមត្រលប់មកមើលម្ដងទៀតនៅពេលក្រោយ។</p>
+      <p class="maint-sub">Website is under maintenance. Please check back later.</p>
+    </div>
+  </div>
+
+  <!-- Background -->
+  <div id="bg">
+    <div id="poster"></div>
+    <img id="bg-image" class="hidden" alt="">
+    <video id="bg-video" class="hidden" muted loop playsinline autoplay preload="auto"></video>
+    <div id="bg-overlay"></div>
+    <div id="scrim"></div>
+    <div id="vignette"></div>
+  </div>
+  <canvas id="fx"></canvas>
+  <canvas id="effects-canvas"></canvas>
+
+  <main id="app">
+    <h1 id="site-title" class="hidden"></h1>
+
+    <section id="stage" aria-label="Links">
+      <div class="glow"></div>
+      <div class="track"></div>
+      <div class="rotor" id="links-container"></div>
+      <div id="logo-wrap">
+        <button id="logo" type="button" aria-label="Profile">
+          <span class="logo-ring"></span>
+          <img id="profile-logo" alt="Profile logo" class="hidden">
+          <span id="logo-placeholder" class="ph"><i class="fas fa-user"></i></span>
+        </button>
+      </div>
+    </section>
+
+    <section id="info">
+      <p id="profile-bio" class="hidden"></p>
+      <div class="pills">
+        <span class="pill hidden" id="profile-status"><span class="dot"></span><span id="status-text"></span></span>
+        <span class="pill badge hidden" id="profile-badge"></span>
+      </div>
+    </section>
+  </main>
+
+  <div id="bottom">
+    <div class="music hidden" id="music">
+      <div class="m-cover"><img id="m-cover" src="assets/logo/logo.jpg" alt=""></div>
+      <div class="m-meta"><b id="m-title">—</b><span id="m-artist"></span></div>
+      <div class="m-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="m-ctrl">
+        <button id="mini-prev" type="button" aria-label="Previous"></button>
+        <button id="mini-play" class="play" type="button" aria-label="Play/Pause"></button>
+        <button id="mini-next" type="button" aria-label="Next"></button>
+      </div>
+    </div>
+    <nav id="bottom-dock" aria-label="Quick links"></nav>
+  </div>
+
+  <!-- Popup / announcement -->
+  <div id="popup-overlay" class="hidden">
+    <div id="popup-box">
+      <button id="popup-close" aria-label="Close">&times;</button>
+      <img id="popup-image" class="hidden" alt="">
+      <h2 id="popup-title"></h2>
+      <p id="popup-desc"></p>
+      <a id="popup-btn" href="#" target="_blank" rel="noopener noreferrer" class="popup-btn hidden"></a>
+    </div>
+  </div>
+
+  <div id="admin-login" class="hidden">
+    <div class="login-box">
+      <input type="password" id="admin-password" placeholder="••••••" autocomplete="off" inputmode="numeric">
+      <button id="admin-login-btn" type="button">Done</button>
+      <p id="login-error" class="hidden">Incorrect</p>
+    </div>
+  </div>
+
+  <audio id="audio-player" preload="auto" playsinline webkit-playsinline></audio>
+
+  <script src="config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/popup.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

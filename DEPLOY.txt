@@ -1,0 +1,43 @@
+========================================
+  របៀប Deploy ឱ្យឃើញ UI ពេញ
+========================================
+
+⚠️  មូលហេតុ UI មិនចេញ = upload មិនគ្រប់ folder
+    (css/ js/ assets/ ត្រូវមាន ទើប UI ចេញ)
+
+រចនាសម្ព័ន្ធ ZIP នេះ (ត្រូវ upload ទាំងអស់):
+
+  index.html      ← ទំព័រសាធារណៈ
+  admin.html      ← Admin panel
+  config.js
+  vercel.json
+  css/            ← ត្រូវមាន!
+    style.css
+    admin.css
+  js/             ← ត្រូវមាន!
+    app.js storage.js music.js ...
+  assets/         ← ត្រូវមាន!
+    logo/logo.jpg
+    background/bg.mp4
+    background/poster.jpg
+
+---------- Vercel (ណែនាំ) ----------
+1. Unzip file នេះ
+2. បង្កើត repo GitHub → upload ឯកសារ+folder ទាំងអស់
+   (កុំ upload តែ index.html)
+3. vercel.com → Add New Project → Import repo
+4. Framework: Other
+   Build Command: (ទទេ)
+   Output Directory: (ទទេ)
+   Root Directory: ./
+5. Deploy
+
+ពិនិត្យបន្ទាប់ deploy:
+  https://your-site.vercel.app/css/style.css  → ត្រូវមិនមែន 404
+  https://your-site.vercel.app/js/app.js      → ត្រូវមិនមែន 404
+
+---------- Admin ----------
+ចុច logo 5 ដង → ពាក្យសម្ងាត់ (មើលក្នុងកញ្ចប់ deploy — សូមប្តូរភ្លាម)
+(សូមប្តូរពាក្យសម្ងាត់ក្នុង Admin → Security)
+
+Maintenance Mode លំនាំដើម = បិទ
